@@ -4,9 +4,11 @@ import {
   DialogContent,
   Typography,
   Box,
+  Button,
 } from "@mui/material";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { Link } from "react-router-dom";
 
 export default function UserDetailsModal({ open, onClose, user }) {
   if (!user) return null;
@@ -24,7 +26,11 @@ export default function UserDetailsModal({ open, onClose, user }) {
           Address: {user.address.street}, {user.address.city}
         </Typography>
         <Typography>Company: {user.company.name}</Typography>
-
+        <Box sx={{ mt: 2 }}>
+          <Button component={Link} to={`/users/${user.id}`} variant="outlined">
+            Details Page
+          </Button>
+        </Box>
         <Box sx={{ mt: 2, height: "300px" }}>
           <MapContainer
             center={[lat, lng]}
