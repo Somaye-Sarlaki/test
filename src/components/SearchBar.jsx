@@ -1,5 +1,5 @@
 import { TextField, Box, InputAdornment } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { Search } from "@mui/icons-material";
 
 export default function SearchBar({ onSearch }) {
   return (
@@ -13,7 +13,7 @@ export default function SearchBar({ onSearch }) {
           input: {
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon color="action" />
+                <Search color="action" />
               </InputAdornment>
             ),
           },
